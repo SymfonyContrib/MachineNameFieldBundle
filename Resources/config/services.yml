@@ -1,0 +1,14 @@
+parameters:
+    machine_name_field.model.class: SymfonyContrib\Bundle\MachineNameFieldBundle\Model\MachineName
+    machine_name_field.form.type.class: SymfonyContrib\Bundle\MachineNameFieldBundle\Form\Type\MachineNameType
+    machine_name_field.transformer: SymfonyContrib\Bundle\MachineNameFieldBundle\Helper\StringToMachineNameTransformer
+
+services:
+    machine_name_field.form.type:
+        class: %machine_name_field.form.type.class%
+        tags:
+            - name: form.type
+              alias: machine_name
+
+    machine_name_field.transformer:
+        class: %machine_name_field.transformer%
